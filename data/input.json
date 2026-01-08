@@ -1,10 +1,9 @@
 {
+  "trialBalanceStage": "pre_closing",
+
   "trialBalance": {
-    "Cash": { "type": "Asset", "balance": 25000 },
-    "Accounts Receivable": { "type": "Asset", "balance": 60000 },
-
+    "Cash": { "type": "Asset", "balance": 85000 },
     "Capital": { "type": "Capital", "balance": 85000 },
-
     "Sales": { "type": "Income", "balance": 85000 },
     "Rent": { "type": "Expense", "balance": 12000 }
   }
