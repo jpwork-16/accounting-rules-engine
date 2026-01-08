@@ -2,17 +2,19 @@
   "trialBalanceStage": "pre_closing",
 
   "trialBalance": {
-    "Cash": { "type": "Asset", "balance": 158000 },
-    "Capital": { "type": "Capital", "balance": 85000 },
+    "Cash": { "type": "Asset", "balance": 203000 },
+    "Equipment": { "type": "Asset", "balance": 50000 },
+
+    "Accrued Salaries": { "type": "Liability", "balance": 0 },
+    "Bank Loan": { "type": "Liability", "balance": 50000 },
+
+    "Capital": { "type": "Capital", "balance": 158000 },
+
+    "Sales": { "type": "Income", "balance": 85000 },
 
     "Rent": { "type": "Expense", "balance": 12000 },
     "Salaries": { "type": "Expense", "balance": 0 },
-    "Depreciation Expense": { "type": "Expense", "balance": 0 },
-
-    "Accrued Salaries": { "type": "Liability", "balance": 0 },
-    "Equipment": { "type": "Asset", "balance": 50000 },
-
-    "Sales": { "type": "Income", "balance": 85000 }
+    "Depreciation Expense": { "type": "Expense", "balance": 0 }
   },
 
   "drawings": [
@@ -20,7 +22,7 @@
       "assetAccount": "Cash",
       "capitalAccount": "Capital",
       "amount": 10000,
-      "description": "Cash withdrawn for personal use"
+      "description": "Cash withdrawn by owner for personal use"
     }
   ],
 
