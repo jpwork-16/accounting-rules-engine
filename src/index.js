@@ -3,16 +3,18 @@ const {
   computeProfitAndLoss,
   updateCapital
 } = require("./engine/compute");
+const { buildBalanceSheet } = require("./statements/balanceSheet");
 
 const input = require("../data/input.json");
 
 const accounts = normalizeTrialBalance(input.trialBalance);
 const pl = computeProfitAndLoss(accounts);
-
 updateCapital(accounts, pl.profit);
+
+const balanceSheet = buildBalanceSheet(accounts);
 
 console.log("PROFIT & LOSS");
 console.log(pl);
 
-console.log("\nFINAL ACCOUNTS WITH WORKINGS");
-console.log(JSON.stringify(accounts, null, 2));
+console.log("\nBALANCE SHEET");
+console.log(JSON.stringify(balanceSheet, null, 2));
