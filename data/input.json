@@ -1,7 +1,10 @@
 {
   "trialBalance": {
     "Cash": { "type": "Asset", "balance": 25000 },
-    "Capital": { "type": "Capital", "balance": 40000 },
+    "Accounts Receivable": { "type": "Asset", "balance": 60000 },
+
+    "Capital": { "type": "Capital", "balance": 85000 },
+
     "Sales": { "type": "Income", "balance": 85000 },
     "Rent": { "type": "Expense", "balance": 12000 }
   }
