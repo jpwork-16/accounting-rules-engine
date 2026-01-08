@@ -1,0 +1,23 @@
+name: Accounting Engine Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
+      - name: Run engine
+        run: node src/index.js
