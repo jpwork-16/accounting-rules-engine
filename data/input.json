@@ -2,8 +2,10 @@
   "trialBalanceStage": "pre_closing",
 
   "trialBalance": {
-    "Cash": { "type": "Asset", "balance": 85000 },
+    "Cash": { "type": "Asset", "balance": 158000 },
+
     "Capital": { "type": "Capital", "balance": 85000 },
+
     "Sales": { "type": "Income", "balance": 85000 },
     "Rent": { "type": "Expense", "balance": 12000 }
   }
