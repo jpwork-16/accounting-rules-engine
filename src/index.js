@@ -23,6 +23,12 @@ const accounts = normalizeTrialBalance(input.trialBalance);
 // 3️⃣ Move to DURING_PERIOD
 // --------------------------------------------------
 accountingState.transitionTo(STATES.DURING_PERIOD);
+// Apply drawings (owner withdrawals)
+if (Array.isArray(input.drawings)) {
+  for (const drawing of input.drawings) {
+    applyDrawing(accounts, drawing, accountingState);
+  }
+}
 
 // --------------------------------------------------
 // 4️⃣ Compute Profit & Loss (for reporting only)
