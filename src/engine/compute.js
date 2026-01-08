@@ -36,23 +36,38 @@ function computeProfitAndLoss(accounts) {
 }
 
 function updateCapital(accounts, profit) {
-  for (const accountName in accounts) {
-    const account = accounts[accountName];
+  let capitalAccount = null;
+  let totalAssets = 0;
 
-    if (account.category === "Capital") {
-      account.balance += profit;
+  for (const name in accounts) {
+    const acc = accounts[name];
 
-      account.history.push({
-        effect: "credited",
-        amount: profit,
-        reason: "Profit transferred from Profit & Loss Account"
-      });
+    if (acc.category === "Capital") {
+      capitalAccount = acc;
+    }
 
-      return;
+    if (acc.category === "Asset") {
+      totalAssets += acc.balance;
     }
   }
 
-  throw new Error("No Capital account found");
+  if (!capitalAccount) {
+    throw new Error("Capital account missing");
+  }
+
+  if (totalAssets < capitalAccount.balance + profit) {
+    throw new Error(
+      "Invalid state: Assets do not support profit transfer to capital"
+    );
+  }
+
+  capitalAccount.balance += profit;
+
+  capitalAccount.history.push({
+    effect: "credited",
+    amount: profit,
+    reason: "Profit transferred at period end"
+  });
 }
 
 module.exports = {
