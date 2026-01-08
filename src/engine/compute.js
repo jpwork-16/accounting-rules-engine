@@ -7,10 +7,22 @@ function computeProfitAndLoss(accounts) {
 
     if (account.category === "Income") {
       totalIncome += account.balance;
+
+      account.history.push({
+        effect: "credited",
+        amount: account.balance,
+        reason: "Included in Profit & Loss as income"
+      });
     }
 
     if (account.category === "Expense") {
       totalExpenses += account.balance;
+
+      account.history.push({
+        effect: "debited",
+        amount: account.balance,
+        reason: "Included in Profit & Loss as expense"
+      });
     }
   }
 
