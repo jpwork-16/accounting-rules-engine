@@ -35,4 +35,28 @@ function computeProfitAndLoss(accounts) {
   };
 }
 
-module.exports = { computeProfitAndLoss };
+function updateCapital(accounts, profit) {
+  for (const accountName in accounts) {
+    const account = accounts[accountName];
+
+    if (account.category === "Capital") {
+      account.balance += profit;
+
+      account.history.push({
+        effect: "credited",
+        amount: profit,
+        reason: "Profit transferred from Profit & Loss Account"
+      });
+
+      return;
+    }
+  }
+
+  throw new Error("No Capital account found");
+}
+
+module.exports = {
+  computeProfitAndLoss,
+  updateCapital
+};
+
