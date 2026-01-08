@@ -3,10 +3,31 @@
 
   "trialBalance": {
     "Cash": { "type": "Asset", "balance": 158000 },
-
     "Capital": { "type": "Capital", "balance": 85000 },
 
-    "Sales": { "type": "Income", "balance": 85000 },
-    "Rent": { "type": "Expense", "balance": 12000 }
-  }
+    "Rent": { "type": "Expense", "balance": 12000 },
+    "Salaries": { "type": "Expense", "balance": 0 },
+    "Depreciation Expense": { "type": "Expense", "balance": 0 },
+
+    "Accrued Salaries": { "type": "Liability", "balance": 0 },
+    "Equipment": { "type": "Asset", "balance": 50000 },
+
+    "Sales": { "type": "Income", "balance": 85000 }
+  },
+
+  "adjustments": [
+    {
+      "type": "accrual",
+      "expenseAccount": "Salaries",
+      "liabilityAccount": "Accrued Salaries",
+      "amount": 3000,
+      "description": "Outstanding salaries"
+    },
+    {
+      "type": "depreciation",
+      "assetAccount": "Equipment",
+      "expenseAccount": "Depreciation Expense",
+      "amount": 5000
+    }
+  ]
 }
