@@ -9,7 +9,9 @@ const input = require("../data/input.json");
 
 const accounts = normalizeTrialBalance(input.trialBalance);
 const pl = computeProfitAndLoss(accounts);
-updateCapital(accounts, pl.profit);
+if (input.trialBalanceStage === "pre_closing") {
+  updateCapital(accounts, pl.profit);
+}
 
 const balanceSheet = buildBalanceSheet(accounts);
 
