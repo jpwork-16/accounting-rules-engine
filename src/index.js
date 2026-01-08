@@ -5,6 +5,7 @@ const { closeIncomeAndExpenses } = require("./engine/closing");
 const { applyAdjustment } = require("./engine/adjustments");
 const { buildBalanceSheet } = require("./statements/balanceSheet");
 const { AccountingState, STATES } = require("./engine/state");
+const { applyDrawing } = require("./engine/drawings");
 
 // Input data
 const input = require("../data/input.json");
